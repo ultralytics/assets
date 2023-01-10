@@ -5,7 +5,7 @@ SE or its affiliates (“Ultralytics”). This Individual Contributor License Ag
 governing any source code, object code, bug fixes, configuration changes, tools, specifications, documentation, data,
 materials, feedback, information or other works of authorship that you submit or have submitted, in any form and in any
 manner, to Ultralytics in respect of any of the Projects (collectively “Contributions”). If you have any questions
-respecting this Agreement, please contact opensource@Ultralytics.com.
+respecting this Agreement, please contact hello@ultralytics.com.
 
 You agree that the following terms apply to all of your past, present and future Contributions. Except for the licenses
 granted in this Agreement, you retain all of your right, title and interest in and to your Contributions.
