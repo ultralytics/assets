@@ -33,7 +33,7 @@
 
 ## 📋 Overview
 
-Welcome to the Ultralytics Assets repository! This repository serves as a storage for visual assets like banners, logos, and more importantly, pre-trained models and datasets. These assets are designed to work seamlessly with Ultralytics YOLO implementations, aiding in object detection, instance segmentation, image classification, pose estimation, and multi-object tracking.
+Welcome to the [Ultralytics](https://ultralytics.com) Assets repository! This repository serves as a storage for visual assets like banners, logos, and more importantly, pre-trained models and datasets. These assets are designed to work seamlessly with [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) implementations, aiding in [object detection](https://docs.ultralytics.com/tasks/detect/), [instance segmentation](https://docs.ultralytics.com/tasks/segment/), [image classification](https://docs.ultralytics.com/tasks/classify/), [pose estimation](https://docs.ultralytics.com/tasks/pose/), and multi-object [tracking](https://docs.ultralytics.com/modes/track/).
 
 ## 🛠 Features
 
