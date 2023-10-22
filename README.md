@@ -1,18 +1,49 @@
-# Ultralytics Assets Repository
+<div align="center">
+  <p>
+    <a href="https://yolovision.ultralytics.com/" target="_blank">
+      <img width="100%" src="https://raw.githubusercontent.com/ultralytics/assets/main/im/banner-yolo-vision-2023.png"></a>
+  </p>
+<br>
 
-## Overview
+<div align="center">
+  <a href="https://github.com/ultralytics" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://www.linkedin.com/company/ultralytics/" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://twitter.com/ultralytics" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-twitter.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://youtube.com/ultralytics" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-youtube.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://www.tiktok.com/@ultralytics" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-tiktok.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://www.instagram.com/ultralytics/" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-instagram.png" width="2%" alt="" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
+  <a href="https://ultralytics.com/discord" style="text-decoration:none;">
+    <img src="https://github.com/ultralytics/assets/blob/main/social/logo-social-discord.png" width="2%" alt="" /></a>
+</div>
+</div>
+
+# 🌟 Ultralytics Assets Repository
+
+## 📋 Overview
 
 Welcome to the Ultralytics Assets repository! This repository serves as a storage for visual assets like banners, logos, and more importantly, pre-trained models and datasets. These assets are designed to work seamlessly with Ultralytics YOLO implementations, aiding in object detection, instance segmentation, image classification, pose estimation, and multi-object tracking.
 
-## Features
+## 🛠 Features
 
-1. **Visual Assets**: Banners and logos to use in your projects or for showcasing your use of Ultralytics resources.
-2. **Models**: Pre-trained models that are ready for download and immediate use. These models are optimized for various computer vision tasks.
-3. **Datasets**: Collections of annotated data that can be used for training or validating models.
+1. **🖼 Visual Assets**: Banners and logos to use in your projects or for showcasing your use of Ultralytics resources.
+2. **🤖 Models**: Pre-trained models that are ready for download and immediate use. These models are optimized for various computer vision tasks.
+3. **📦 Datasets**: Collections of annotated data that can be used for training or validating models.
 
-## Usage
+## 💡 Usage
 
-### Autodownload of Pretrained Models
+### 📥 Autodownload of Pretrained Models
 
 When using Ultralytics YOLO APIs, if a pre-trained model is not found locally, it will be automatically downloaded from this repository.
 
@@ -31,22 +62,22 @@ source = 'path/to/image.jpg'
 results = model(source)  # Returns a list of Results objects
 ```
 
-### Accessing Visual Assets
+### 🌐 Accessing Visual Assets
 
 The visual assets can be downloaded directly from the main branch of this repository. They are free for use in your own projects or documentation.
 
-### Accessing Datasets
+### 📚 Accessing Datasets
 
 Datasets can be downloaded from the repository releases. Please refer to the individual dataset READMEs for usage instructions and licenses.
 
-## Contributing
+## 🤝 Contributing
 
 If you'd like to contribute models, datasets, or visual assets to this repository, please submit a pull request or open an issue to discuss the contribution.
 
-## Support
+## 🆘 Support
 
 For any questions, feature requests, or debugging queries, feel free to reach out to the Ultralytics support team or raise an issue on GitHub.
 
-## License
+## 📝 License
 
 This repository and its assets are covered under the GNU Affero General Public License v3.0 (AGPL-3.0). Please refer to the [LICENSE](./LICENSE) file for more details.
