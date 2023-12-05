@@ -24,8 +24,6 @@
 
 # 🌟 Welcome to the Ultralytics Assets Repository
 
-## 📋 Overview
-
 Welcome! You've arrived at the [Ultralytics](https://ultralytics.com) Assets repository, your one-stop hub for visual assets, powerful pre-trained models, and carefully curated datasets. These tools are meticulously crafted to complement the Ultralytics YOLO ecosystem, providing capabilities that span object detection, instance segmentation, image classification, pose estimation, and tracking.
 
 ## 🛠 Features at a Glance
