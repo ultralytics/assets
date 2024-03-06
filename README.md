@@ -5,7 +5,7 @@
 
 Welcome! You've arrived at the [Ultralytics](https://ultralytics.com) Assets repository, your one-stop hub for visual assets, powerful pre-trained models, and carefully curated datasets. These tools are meticulously crafted to complement the Ultralytics YOLO ecosystem, providing capabilities that span object detection, instance segmentation, image classification, pose estimation, and tracking.
 
-[![Ultralytics Actions](https://github.com/ultralytics/assets/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/assets/actions/workflows/format.yml)
+[![Ultralytics Actions](https://github.com/ultralytics/assets/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/assets/actions/workflows/format.yml) <a href="https://ultralytics.com/discord"><img alt="Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a>
 
 ## 🛠 Features at a Glance
 
