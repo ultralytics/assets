@@ -25,10 +25,10 @@ _For example:_
 from ultralytics import YOLO
 
 # Instantiating a pre-trained YOLOv8n model
-model = YOLO('yolov8n.pt')
+model = YOLO("yolov8n.pt")
 
 # Path to your image
-source = 'path/to/image.jpg'
+source = "path/to/image.jpg"
 
 # Perform inference with just one line
 results = model(source)  # This command completes the inference cycle and returns detection results
