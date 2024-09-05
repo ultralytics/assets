@@ -3,7 +3,7 @@
 
 # 🌟 Welcome to the Ultralytics Assets Repository
 
-Welcome! You've arrived at the [Ultralytics](https://ultralytics.com) Assets repository, your one-stop hub for visual assets, powerful pre-trained models, and carefully curated datasets. These tools are meticulously crafted to complement the Ultralytics YOLO ecosystem, providing capabilities that span object detection, instance segmentation, image classification, pose estimation, and tracking.
+Welcome! You've arrived at the [Ultralytics](https://www.ultralytics.com/) Assets repository, your one-stop hub for visual assets, powerful pre-trained models, and carefully curated datasets. These tools are meticulously crafted to complement the Ultralytics YOLO ecosystem, providing capabilities that span object detection, instance segmentation, image classification, pose estimation, and tracking.
 
 [![Ultralytics Actions](https://github.com/ultralytics/assets/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/assets/actions/workflows/format.yml) <a href="https://ultralytics.com/discord"><img alt="Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a> <a href="https://community.ultralytics.com"><img alt="Ultralytics Forums" src="https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue"></a> <a href="https://reddit.com/r/ultralytics"><img alt="Ultralytics Reddit" src="https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue"></a>
 
@@ -44,7 +44,7 @@ Our datasets are accessible via repository releases and come with comprehensive 
 
 ## 🤝 Contribute
 
-We welcome contributions from the community! Whether you're fixing bugs, adding new features, or improving documentation, your input is invaluable. Take a look at our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started. Also, we'd love to hear about your experience with Ultralytics products. Please consider filling out our [Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). A huge 🙏 and thank you to all of our contributors!
+We welcome contributions from the community! Whether you're fixing bugs, adding new features, or improving documentation, your input is invaluable. Take a look at our [Contributing Guide](https://docs.ultralytics.com/help/contributing) to get started. Also, we'd love to hear about your experience with Ultralytics products. Please consider filling out our [Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey). A huge 🙏 and thank you to all of our contributors!
 
 <!-- Ultralytics contributors -->
 
@@ -55,12 +55,12 @@ We welcome contributions from the community! Whether you're fixing bugs, adding 
 
 Ultralytics is excited to offer two different licensing options to meet your needs:
 
-- **AGPL-3.0 License**: Perfect for students and hobbyists, this [OSI-approved](https://opensource.org/licenses/) open-source license encourages collaborative learning and knowledge sharing. Please refer to the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for detailed terms.
-- **Enterprise License**: Ideal for commercial use, this license allows for the integration of Ultralytics software and AI models into commercial products without the open-source requirements of AGPL-3.0. For use cases that involve commercial applications, please contact us via [Ultralytics Licensing](https://ultralytics.com/license).
+- **AGPL-3.0 License**: Perfect for students and hobbyists, this [OSI-approved](https://opensource.org/license) open-source license encourages collaborative learning and knowledge sharing. Please refer to the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for detailed terms.
+- **Enterprise License**: Ideal for commercial use, this license allows for the integration of Ultralytics software and AI models into commercial products without the open-source requirements of AGPL-3.0. For use cases that involve commercial applications, please contact us via [Ultralytics Licensing](https://www.ultralytics.com/license).
 
 ## 📬 Contact Us
 
-For bug reports, feature requests, and contributions, head to [GitHub Issues](https://github.com/ultralytics/assets/issues). For questions and discussions about this project and other Ultralytics endeavors, join us on [Discord](https://ultralytics.com/discord)!
+For bug reports, feature requests, and contributions, head to [GitHub Issues](https://github.com/ultralytics/assets/issues). For questions and discussions about this project and other Ultralytics endeavors, join us on [Discord](https://discord.com/invite/ultralytics)!
 
 <br>
 <div align="center">
