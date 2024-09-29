@@ -24,7 +24,7 @@ on:
 
 jobs:
   tag-and-release:
-    if: github.repository == 'ultralytics/docs' && github.actor == 'glenn-jocher'
+    if: github.repository == 'ultralytics/assets' && github.actor == 'glenn-jocher'
     name: Tag and Release
     runs-on: ubuntu-latest
     steps:
