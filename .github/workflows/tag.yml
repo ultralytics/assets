@@ -1,0 +1,76 @@
+# Ultralytics 🚀 - AGPL-3.0 License https://ultralytics.com/license
+# Ultralytics Actions https://github.com/ultralytics/actions
+# This workflow automatically publishes a new repository tag and release
+
+name: Tag and Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g., v0.0.0)'
+        required: true
+        type: string
+      publish_tag:
+        description: 'Publish new tag'
+        required: true
+        type: boolean
+        default: true
+      publish_release:
+        description: 'Publish new release'
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  tag-and-release:
+    if: github.repository == 'ultralytics/docs' && github.actor == 'glenn-jocher'
+    name: Tag and Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Git config
+        run: |
+          git config --global user.name "UltralyticsAssistant"
+          git config --global user.email "web@ultralytics.com"
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git rev-parse ${{ github.event.inputs.tag_name }} >/dev/null 2>&1; then
+            echo "Tag ${{ github.event.inputs.tag_name }} already exists"
+            echo "tag_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "Tag ${{ github.event.inputs.tag_name }} does not exist"
+            echo "tag_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish new tag
+        if: steps.check_tag.outputs.tag_exists == 'false'
+        run: |
+          git tag -a "${{ github.event.inputs.tag_name }}" -m "$(git log -1 --pretty=%B)"
+          git push origin "${{ github.event.inputs.tag_name }}"
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip wheel
+          pip install requests
+
+      - name: Publish new release
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          CURRENT_TAG: ${{ github.event.inputs.tag_name }}
+        run: |
+          curl -s "https://raw.githubusercontent.com/ultralytics/actions/main/utils/summarize_release.py" | python -
+        shell: bash
