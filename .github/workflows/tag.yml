@@ -8,16 +8,16 @@ on:
   workflow_dispatch:
     inputs:
       tag_name:
-        description: 'Tag name (e.g., v0.0.0)'
+        description: "Tag name (e.g., v0.0.0)"
         required: true
         type: string
       publish_tag:
-        description: 'Publish new tag'
+        description: "Publish new tag"
         required: true
         type: boolean
         default: true
       publish_release:
-        description: 'Publish new release'
+        description: "Publish new release"
         required: true
         type: boolean
         default: true
