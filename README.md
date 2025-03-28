@@ -11,9 +11,9 @@ Welcome! You've arrived at the [Ultralytics](https://www.ultralytics.com/) Asset
 
 ## 🛠️ Features at a Glance
 
--   **🖼 Visual Assets**: Access our collection of banners and logos for use in your applications or collaborations involving Ultralytics tools.
--   **🤖 Models at Your Fingertips**: Leverage pre-trained models, ready for deployment after [fine-tuning](https://www.ultralytics.com/glossary/fine-tuning). These models are optimized for a variety of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks.
--   **📦 Datasets Ready for Action**: Enhance your [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) projects with our repositories of [annotated data](https://www.ultralytics.com/glossary/data-labeling), prepared for model training, validation, and testing. Explore available datasets in our [datasets documentation](https://docs.ultralytics.com/datasets/).
+- **🖼 Visual Assets**: Access our collection of banners and logos for use in your applications or collaborations involving Ultralytics tools.
+- **🤖 Models at Your Fingertips**: Leverage pre-trained models, ready for deployment after [fine-tuning](https://www.ultralytics.com/glossary/fine-tuning). These models are optimized for a variety of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks.
+- **📦 Datasets Ready for Action**: Enhance your [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) projects with our repositories of [annotated data](https://www.ultralytics.com/glossary/data-labeling), prepared for model training, validation, and testing. Explore available datasets in our [datasets documentation](https://docs.ultralytics.com/datasets/).
 
 ## 💡 Getting Started with Usage
 
@@ -25,13 +25,13 @@ Ultralytics YOLO frameworks automatically download required pre-trained models f
 from ultralytics import YOLO
 
 # Load a pre-trained Ultralytics YOLOv8n model
-model = YOLO("yolov8n.pt") # Model automatically downloaded if not present
+model = YOLO("yolov8n.pt")  # Model automatically downloaded if not present
 
 # Define the source image path
 source = "path/to/image.jpg"
 
 # Perform inference
-results = model(source) # Returns detection results
+results = model(source)  # Returns detection results
 ```
 
 ### 🌐 Embrace the Visuals
@@ -52,8 +52,8 @@ We encourage contributions from the community! Whether it's fixing bugs, adding 
 
 Ultralytics offers two licensing options:
 
--   **AGPL-3.0 License**: An [OSI-approved](https://opensource.org/license/agpl-v3) open-source license ideal for students and enthusiasts, promoting open collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for details.
--   **Enterprise License**: Designed for commercial use, this license permits the integration of Ultralytics software and AI models into commercial products without the open-source stipulations of AGPL-3.0. If your project involves commercial applications, please contact us through [Ultralytics Licensing](https://www.ultralytics.com/license).
+- **AGPL-3.0 License**: An [OSI-approved](https://opensource.org/license/agpl-v3) open-source license ideal for students and enthusiasts, promoting open collaboration and knowledge sharing. See the [LICENSE](https://github.com/ultralytics/ultralytics/blob/main/LICENSE) file for details.
+- **Enterprise License**: Designed for commercial use, this license permits the integration of Ultralytics software and AI models into commercial products without the open-source stipulations of AGPL-3.0. If your project involves commercial applications, please contact us through [Ultralytics Licensing](https://www.ultralytics.com/license).
 
 ## 📬 Contact Us
 
