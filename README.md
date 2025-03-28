@@ -21,22 +21,18 @@ Welcome! You've arrived at the [Ultralytics](https://www.ultralytics.com/) Asset
 
 Ultralytics YOLO frameworks automatically download required pre-trained models from this repository if they are not found locally.
 
-!!! Example
+```python
+from ultralytics import YOLO
 
-    === "Python"
+# Load a pre-trained Ultralytics YOLOv8n model
+model = YOLO("yolov8n.pt") # Model automatically downloaded if not present
 
-        ```python
-        from ultralytics import YOLO
+# Define the source image path
+source = "path/to/image.jpg"
 
-        # Load a pre-trained Ultralytics YOLOv8n model
-        model = YOLO("yolov8n.pt") # Model automatically downloaded if not present
-
-        # Define the source image path
-        source = "path/to/image.jpg"
-
-        # Perform inference
-        results = model(source) # Returns detection results
-        ```
+# Perform inference
+results = model(source) # Returns detection results
+```
 
 ### 🌐 Embrace the Visuals
 
