@@ -5,6 +5,9 @@
 
 name: Tag and Release
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
     inputs:
