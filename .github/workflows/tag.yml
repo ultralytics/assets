@@ -4,6 +4,7 @@
 # This workflow automatically publishes a new repository tag and release
 
 name: Tag and Release
+
 permissions:
   contents: write
 
