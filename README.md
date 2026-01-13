@@ -24,7 +24,7 @@ Ultralytics YOLO frameworks automatically download required pre-trained models f
 ```python
 from ultralytics import YOLO
 
-# Load a pre-trained Ultralytics YOLO26n model
+# Load a pre-trained Ultralytics YOLO model
 model = YOLO("yolo26n.pt")  # Model automatically downloaded if not present
 
 # Define the source image path
