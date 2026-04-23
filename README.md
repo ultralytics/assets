@@ -38,9 +38,31 @@ results = model(source)  # Returns detection results
 
 All visual assets are available on the main branch and can be downloaded directly for your projects, presentations, or documentation needs.
 
+Use raw GitHub URLs when you need stable links in docs, notebooks, websites, or examples:
+
+```text
+https://raw.githubusercontent.com/ultralytics/assets/main/path/to/asset.ext
+```
+
+For example, the Ultralytics logo used above is available at:
+
+```text
+https://raw.githubusercontent.com/ultralytics/assets/main/logo/Ultralytics_Logotype_Original.svg
+```
+
 ### 📚 Explore Our Datasets
 
 Our datasets are accessible through repository releases. Each dataset includes a README file with usage instructions. Please review the specific licenses and guidelines for each dataset to ensure compliance with your project requirements.
+
+## 📁 Repository Layout
+
+- `logo/`: Ultralytics logos and favicon assets.
+- `social/`: Social media icons used across Ultralytics repositories.
+- `docs/`: Documentation images, diagrams, screenshots, and media.
+- `im/`: Sample images used in inference and documentation examples.
+- `app/`: Application screenshots and onboarding visuals.
+- `blog/`, `og/`, and `partners/`: Marketing, Open Graph, and partner images.
+- `yolo/`, `yolov3/`, `yolov5/`, and `yolov8/`: YOLO-family banners, diagrams, and example assets.
 
 ## 🤝 Contribute
 
