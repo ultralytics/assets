@@ -1,27 +1,35 @@
-# Ultralytics 🚀 - AGPL-3.0 license
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
 # Ultralytics Actions https://github.com/ultralytics/actions
-# This workflow automatically formats code and documentation in PRs to official Ultralytics standards
+# This workflow formats code and documentation in PRs to Ultralytics standards
 
 name: Ultralytics Actions
 
 on:
-  push:
-    branches: [main]
+  issues:
+    types: [opened]
   pull_request:
     branches: [main]
+    types: [opened, closed, synchronize, review_requested]
+
+permissions:
+  contents: write # Modify code in PRs
+  pull-requests: write # Add comments and labels to PRs
+  issues: write # Add comments and labels to issues
 
 jobs:
-  format:
+  actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Ultralytics Formatting
+      - name: Run Ultralytics Actions
         uses: ultralytics/actions@main
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} # automatically generated, do not modify
-          python: true # format Python code and docstrings
-          markdown: true # format Markdown and YAML
-          spelling: true # check spelling
-          links: true # check broken links
-          summary: true # print PR summary with GPT4 (requires 'openai_api_key' or 'openai_azure_api_key' and 'openai_azure_endpoint')
-          openai_azure_api_key: ${{ secrets.OPENAI_AZURE_API_KEY }}
-          openai_azure_endpoint: ${{ secrets.OPENAI_AZURE_ENDPOINT }}
+          token: ${{ secrets._GITHUB_TOKEN || secrets.GITHUB_TOKEN }} # Auto-generated token
+          labels: true # Auto-label issues/PRs using AI
+          python: true # Format Python with Ruff and docformatter
+          prettier: true # Format YAML, JSON, Markdown, CSS
+          spelling: true # Check spelling with codespell
+          links: false # Check broken links with Lychee
+          summary: true # Generate AI-powered PR summaries
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }} # Powers PR summaries, labels and comments
+          brave_api_key: ${{ secrets.BRAVE_API_KEY }} # Used for broken link resolution
