@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          token: ${{ secrets._GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Git config
         run: |
@@ -46,12 +46,12 @@ jobs:
       - name: Check if tag exists
         id: check_tag
         run: |
-          if git rev-parse ${{ github.event.inputs.tag_name }} >/dev/null 2>&1; then
+          if git rev-parse "${{ github.event.inputs.tag_name }}" >/dev/null 2>&1; then
             echo "Tag ${{ github.event.inputs.tag_name }} already exists"
-            echo "tag_exists=true" >> $GITHUB_OUTPUT
+            echo "tag_exists=true" >> "$GITHUB_OUTPUT"
           else
             echo "Tag ${{ github.event.inputs.tag_name }} does not exist"
-            echo "tag_exists=false" >> $GITHUB_OUTPUT
+            echo "tag_exists=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Publish new tag
@@ -71,9 +71,10 @@ jobs:
           pip install ultralytics-actions
 
       - name: Publish new release
+        if: github.event.inputs.publish_release == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets._GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CURRENT_TAG: ${{ github.event.inputs.tag_name }}
         run: ultralytics-actions-summarize-release
         shell: bash
