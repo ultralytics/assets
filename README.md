@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-This repository stores shared Ultralytics assets used across documentation, applications, examples, releases, and model downloads. It provides stable files for the Ultralytics YOLO ecosystem, including [object detection](https://docs.ultralytics.com/tasks/detect/), [instance segmentation](https://docs.ultralytics.com/tasks/segment/), [classification](https://docs.ultralytics.com/tasks/classify/), [pose estimation](https://docs.ultralytics.com/tasks/pose/), and [tracking](https://docs.ultralytics.com/modes/track/).
+This repository stores shared Ultralytics assets used across documentation, applications, examples, releases, and model downloads. It provides stable files for the Ultralytics YOLO ecosystem, including [object detection](https://docs.ultralytics.com/tasks/detect), [instance segmentation](https://docs.ultralytics.com/tasks/segment), [classification](https://docs.ultralytics.com/tasks/classify), [pose estimation](https://docs.ultralytics.com/tasks/pose), and [tracking](https://docs.ultralytics.com/modes/track).
 
 [![Ultralytics Actions](https://github.com/ultralytics/assets/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/assets/actions/workflows/format.yml)
 [![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
@@ -42,11 +42,11 @@ model = YOLO("yolo26n.pt")
 results = model("path/to/image.jpg")
 ```
 
-See the [Ultralytics model documentation](https://docs.ultralytics.com/models/) for available model families, tasks, and export options.
+See the [Ultralytics model documentation](https://docs.ultralytics.com/models) for available model families, tasks, and export options.
 
 ## Datasets
 
-Dataset artifacts are published through repository releases and referenced from the [Ultralytics datasets documentation](https://docs.ultralytics.com/datasets/). Review the README, license, and usage notes for each dataset before using it in a project.
+Dataset artifacts are published through repository releases and referenced from the [Ultralytics datasets documentation](https://docs.ultralytics.com/datasets). Review the README, license, and usage notes for each dataset before using it in a project.
 
 ## Repository Layout
 
@@ -61,7 +61,7 @@ Dataset artifacts are published through repository releases and referenced from 
 
 ## Contributing
 
-Contributions are welcome when they improve asset quality, accuracy, organization, or documentation. Please read the [Contributing Guide](https://docs.ultralytics.com/help/contributing/) before opening a pull request. For product feedback, use the [Ultralytics Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey).
+Contributions are welcome when they improve asset quality, accuracy, organization, or documentation. Please read the [Contributing Guide](https://docs.ultralytics.com/help/contributing) before opening a pull request. For product feedback, use the [Ultralytics Survey](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey).
 
 [![Ultralytics open-source contributors](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
 

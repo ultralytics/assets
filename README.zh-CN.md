@@ -4,7 +4,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-本仓库存放 Ultralytics 在文档、应用、示例、发布和模型下载中共用的资源文件。它为 Ultralytics YOLO 生态提供稳定文件，覆盖[目标检测](https://docs.ultralytics.com/tasks/detect/)、[实例分割](https://docs.ultralytics.com/tasks/segment/)、[图像分类](https://docs.ultralytics.com/tasks/classify/)、[姿态估计](https://docs.ultralytics.com/tasks/pose/)和[目标跟踪](https://docs.ultralytics.com/modes/track/)等任务。
+本仓库存放 Ultralytics 在文档、应用、示例、发布和模型下载中共用的资源文件。它为 Ultralytics YOLO 生态提供稳定文件，覆盖[目标检测](https://docs.ultralytics.com/tasks/detect)、[实例分割](https://docs.ultralytics.com/tasks/segment)、[图像分类](https://docs.ultralytics.com/tasks/classify)、[姿态估计](https://docs.ultralytics.com/tasks/pose)和[目标跟踪](https://docs.ultralytics.com/modes/track)等任务。
 
 [![Ultralytics Actions](https://github.com/ultralytics/assets/actions/workflows/format.yml/badge.svg)](https://github.com/ultralytics/assets/actions/workflows/format.yml)
 [![Ultralytics Discord](https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue)](https://discord.com/invite/ultralytics)
@@ -42,11 +42,11 @@ model = YOLO("yolo26n.pt")
 results = model("path/to/image.jpg")
 ```
 
-可在 [Ultralytics 模型文档](https://docs.ultralytics.com/models/)中查看可用模型系列、任务和导出选项。
+可在 [Ultralytics 模型文档](https://docs.ultralytics.com/models)中查看可用模型系列、任务和导出选项。
 
 ## 数据集
 
-数据集文件通过仓库 Releases 发布，并在 [Ultralytics 数据集文档](https://docs.ultralytics.com/datasets/)中引用。在项目中使用数据集前，请先查看对应的 README、许可证和使用说明。
+数据集文件通过仓库 Releases 发布，并在 [Ultralytics 数据集文档](https://docs.ultralytics.com/datasets)中引用。在项目中使用数据集前，请先查看对应的 README、许可证和使用说明。
 
 ## 仓库结构
 
@@ -61,7 +61,7 @@ results = model("path/to/image.jpg")
 
 ## 贡献
 
-欢迎提交能提升资源质量、准确性、组织方式或文档说明的贡献。打开 Pull Request 前，请先阅读[贡献指南](https://docs.ultralytics.com/help/contributing/)。如需提供产品反馈，请使用 [Ultralytics 调查问卷](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey)。
+欢迎提交能提升资源质量、准确性、组织方式或文档说明的贡献。打开 Pull Request 前，请先阅读[贡献指南](https://docs.ultralytics.com/help/contributing)。如需提供产品反馈，请使用 [Ultralytics 调查问卷](https://www.ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey)。
 
 [![Ultralytics 开源贡献者](https://raw.githubusercontent.com/ultralytics/assets/main/im/image-contributors.png)](https://github.com/ultralytics/ultralytics/graphs/contributors)
 
