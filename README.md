@@ -53,6 +53,7 @@ Dataset artifacts are published through repository releases and referenced from 
 - `app/`: App store badges, screenshots, and onboarding visuals.
 - `blog/`, `og/`, and `partners/`: Blog, Open Graph, and partner media.
 - `docs/`: Documentation images, diagrams, screenshots, audio, and media.
+- `documents/`: Legal and policy documents such as the Contributor License Agreement (CLA).
 - `im/`: Sample images used in inference and documentation examples.
 - `logo/`: Ultralytics logos, logotypes, and favicon assets.
 - `mkdocs/`: Assets used by Ultralytics documentation builds.

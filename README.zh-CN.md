@@ -53,6 +53,7 @@ results = model("path/to/image.jpg")
 - `app/`：应用商店徽章、截图和引导页视觉资源。
 - `blog/`、`og/` 和 `partners/`：博客、Open Graph 和合作伙伴媒体资源。
 - `docs/`：文档图片、图表、截图、音频和媒体。
+- `documents/`：法律与政策文档，例如贡献者许可协议（CLA）。
 - `im/`：推理和文档示例使用的示例图片。
 - `logo/`：Ultralytics 标志、字标和网站图标资源。
 - `mkdocs/`：Ultralytics 文档构建使用的资源。
