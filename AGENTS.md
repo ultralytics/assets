@@ -34,11 +34,11 @@ After opening a PR:
 
 ```bash
 # No build or test suite exists — this repository contains only static assets and Markdown
-npx prettier --write "**/*.md" "**/*.yml" # format Markdown/YAML as CI does (format.yml, prettier: true)
-uv pip install codespell && codespell     # spell-check as CI does (format.yml, spelling: true)
+npx prettier --write --print-width 120 "**/*.md" "**/*.yml" # approximates the prettier step in format.yml
+uvx codespell                                               # spell-check (format.yml, spelling: true)
 ```
 
-CI is a single `ubuntu-latest` job (no matrix) in `.github/workflows/format.yml` running `ultralytics/actions@main` with `python: false` (no Python files) and `links: false`.
+`.github/workflows/format.yml` is the formatting source of truth: a single `ubuntu-latest` job (no matrix) running `ultralytics/actions@main` with `python: false` (no Python files) and `links: false`. PRs also get a GitHub default-setup CodeQL check (no workflow file in the repo).
 
 ## Architecture
 
