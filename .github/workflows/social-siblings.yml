@@ -1,0 +1,139 @@
+name: Social image siblings
+
+# Link-preview scrapers (Slack, Telegram, X, LinkedIn) cannot decode AVIF, so every docs AVIF needs a
+# WebP sibling at the same path for consumers to swap in when they emit og:image. Consumers rewrite
+# the extension without checking the network, so a missing sibling is a hard 404 on a live page —
+# this job keeps the invariant true for every AVIF added to docs/.
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write # Commit generated siblings to the PR branch
+
+jobs:
+  siblings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # A fork PR's branch does not exist in this repository, so read it from the fork itself.
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.head_ref || github.ref_name }}
+          # Keep the write credential out of the apt/npm/decoder steps below; the commit step
+          # authenticates explicitly just before pushing.
+          persist-credentials: false
+
+      - name: Detect changed AVIF
+        id: detect
+        env:
+          GH_TOKEN: ${{ secrets._GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          : > changed.txt
+          if [ -n "${PR:-}" ]; then
+            # An AVIF replaced in place keeps its old sibling unless we force a rebuild, which would
+            # leave the preview showing the previous picture. 38 docs AVIFs have been replaced so far.
+            total=$(gh api "repos/${{ github.repository }}/pulls/$PR" --jq '.changed_files')
+            if [ "$total" -gt 3000 ]; then
+              echo "::error::This PR changes $total files; the API lists at most 3000, so changed AVIF images cannot be enumerated reliably. Split the PR."
+              exit 1
+            fi
+            gh api "repos/${{ github.repository }}/pulls/$PR/files" --paginate --jq '.[].filename' > all.txt
+            grep -iE '^docs/.*\.avif$' all.txt > changed.txt || [ $? -eq 1 ]
+            rm all.txt
+          fi
+          echo "changed=$(wc -l < changed.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          echo "AVIF changed by this PR: $(wc -l < changed.txt)"
+
+      - name: Install encoders
+        if: steps.detect.outputs.changed != '0' || github.event_name == 'workflow_dispatch'
+        # libvips (via sharp) cannot decode an AVIF image sequence; libavif-bin supplies avifdec for
+        # the animated files, whose first frame becomes the still preview.
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends libavif-bin
+          npm install --no-save --silent sharp@0.35.3
+
+      - name: Generate WebP siblings
+        if: steps.detect.outputs.changed != '0' || github.event_name == 'workflow_dispatch'
+        run: |
+          cat > siblings.mjs <<'EOF'
+          import { execFileSync } from "node:child_process";
+          import { access, readFile, readdir, rm, writeFile } from "node:fs/promises";
+          import path from "node:path";
+          import sharp from "sharp";
+
+          const dir = "docs";
+          const forced = new Set(
+            (await readFile("changed.txt", "utf8")).split("\n").filter(Boolean),
+          );
+          const encode = (input) =>
+            sharp(input, { failOn: "none" })
+              .rotate()
+              .resize({ width: 1200, withoutEnlargement: true })
+              .webp({ quality: 80, effort: 6 })
+              .toBuffer();
+
+          const files = (await readdir(dir, { recursive: true }))
+            .filter((f) => f.toLowerCase().endsWith(".avif"))
+            .sort();
+          const failed = [];
+          let made = 0;
+          for (const file of files) {
+            const out = path.join(dir, file.replace(/\.avif$/i, ".webp"));
+            const src = path.join(dir, file);
+            if (!forced.has(src)) {
+              try {
+                await access(out);
+                continue;
+              } catch {}
+            }
+            let buf;
+            try {
+              buf = await encode(src);
+            } catch {
+              const frame = `${out}.frame.png`;
+              try {
+                execFileSync("avifdec", ["--index", "0", src, frame], { stdio: "ignore" });
+                buf = await encode(frame);
+              } catch {
+                failed.push(file);
+                continue;
+              } finally {
+                await rm(frame, { force: true });
+              }
+            }
+            await writeFile(out, buf);
+            made++;
+          }
+          console.log(`generated ${made} sibling(s)`);
+          if (failed.length) {
+            console.error(`could not encode: ${failed.join(", ")}`);
+            process.exit(1);
+          }
+          EOF
+          node siblings.mjs
+          rm siblings.mjs changed.txt
+
+      - name: Commit
+        if: steps.detect.outputs.changed != '0' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets._GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          git add docs
+          git diff --staged --quiet && exit 0
+          # A fork PR gets a read-only token, so the siblings cannot be pushed back to it. Fail
+          # loudly instead of merging an AVIF whose preview would 404.
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" != "" ] &&
+             [ "${{ github.event.pull_request.head.repo.full_name }}" != "${{ github.repository }}" ]; then
+            echo "::error::This PR changes AVIF images whose WebP siblings are missing or stale. Generate them and commit them to this branch before merging; see .github/workflows/social-siblings.yml for the encoder settings."
+            exit 1
+          fi
+          git config user.name "UltralyticsAssistant"
+          git config user.email "web@ultralytics.com"
+          git commit -m "Add WebP social siblings for new AVIF images"
+          gh auth setup-git
+          git push
