@@ -65,10 +65,10 @@ jobs:
         with:
           python-version: "3.x"
 
+      - uses: ultralytics/actions/setup-uv@main
+
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip wheel
-          pip install ultralytics-actions
+        run: uv pip install --system ultralytics-actions
 
       - name: Publish new release
         if: github.event.inputs.publish_release == 'true'
