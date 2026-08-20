@@ -6,11 +6,11 @@ contact_links:
     url: https://github.com/ultralytics/assets#readme
     about: Overview of logos, datasets, and model files
   - name: 💬 Forum
-    url: https://community.ultralytics.com/
+    url: https://community.ultralytics.com
     about: Ask the Ultralytics community for workflow help
   - name: 🎧 Discord
     url: https://ultralytics.com/discord
     about: Chat with the Ultralytics team and other builders
   - name: ⌨️ Reddit
-    url: https://reddit.com/r/ultralytics
+    url: https://www.reddit.com/r/ultralytics/
     about: Discuss Ultralytics projects on Reddit
