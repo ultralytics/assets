@@ -60,7 +60,7 @@ jobs:
           git tag -a "${{ github.event.inputs.tag_name }}" -m "$(git log -1 --pretty=%B)"
           git push origin "${{ github.event.inputs.tag_name }}"
 
-      - uses: ultralytics/actions/setup-uv@main
+      - uses: ultralytics/actions/setup-uv@setup-uv-defaults
 
       - name: Install dependencies
         run: uv pip install ultralytics-actions
